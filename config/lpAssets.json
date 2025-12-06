@@ -1,5 +1,13 @@
 [
   {
+    "description": "Membrane's CDP stablecoin",
+    "base": "factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/ucdt",
+    "symbol": "CDT",
+    "decimal": 6,
+    "isLP": false,
+    "logo":  "cdt.svg"
+  },
+  {
     "description": "Osmo - USDC.axl Pool",
     "base": "gamm/pool/678",
     "symbol": "OSMO/USDC.axl LP",
