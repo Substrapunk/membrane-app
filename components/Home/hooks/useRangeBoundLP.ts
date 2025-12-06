@@ -65,7 +65,9 @@ const useBoundedLP = ({ onSuccess, run = true, swapToCDT = true }: { onSuccess?:
     ],
     queryFn: () => {
       if (!address || !cdtAsset || !boundedCDTAsset || !usdcAsset || !prices || !positionInfo) {
-        console.log("bounded early return", address, boundedCDTAsset, quickActionState, underlyingCDT, boundedCDTBalance, usdcAsset, prices, positionInfo, manageMsg, manageAction); 
+        // console.log("bounded early return", address, boundedCDTAsset, quickActionState, underlyingCDT, boundedCDTBalance, usdcAsset, prices, positionInfo, manageMsg, manageAction); 
+        console.log("bounded early return", !address || !cdtAsset || !boundedCDTAsset || !usdcAsset || !prices || !positionInfo); 
+        console.log("bounded early return", address, cdtAsset, boundedCDTAsset, usdcAsset, prices, positionInfo); 
         return { msgs: [] }
       }
       var msgs = [] as MsgExecuteContractEncodeObject[]
