@@ -199,7 +199,7 @@ const useBoundedLP = ({ onSuccess, run = true, swapToCDT = true }: { onSuccess?:
       msgs,
       queryKey: ['home_page_bounded', (msgs?.toString() ?? "0")],
       onSuccess: onInitialSuccess,
-      enabled: false
+      enabled: true
     })
   }
 }
