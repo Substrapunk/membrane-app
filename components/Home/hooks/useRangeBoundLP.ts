@@ -65,7 +65,7 @@ const useBoundedLP = ({ onSuccess, run = true, swapToCDT = true }: { onSuccess?:
     ],
     queryFn: () => {
       if (!address || !cdtAsset || !boundedCDTAsset || !usdcAsset || !prices || !positionInfo) {
-        // console.log("bounded early return", address, boundedCDTAsset, quickActionState, underlyingCDT, boundedCDTBalance, usdcAsset, prices, positionInfo, manageMsg, manageAction); 
+        console.log("bounded early return", address, boundedCDTAsset, quickActionState, underlyingCDT, boundedCDTBalance, usdcAsset, prices, positionInfo, manageMsg, manageAction); 
         return { msgs: [] }
       }
       var msgs = [] as MsgExecuteContractEncodeObject[]
@@ -74,7 +74,10 @@ const useBoundedLP = ({ onSuccess, run = true, swapToCDT = true }: { onSuccess?:
       //Append manageMsg if its not errored
       if (!(manageAction?.simulate.isError || !manageAction?.simulate.data)) msgs = manageMsg ?? []
 
+      
+        console.log("outside withdrawal", quickActionState.rangeBoundLPwithdrawal)
       if (quickActionState.rangeBoundLPwithdrawal != 0) {
+        console.log("inside withdrawal", quickActionState.rangeBoundLPwithdrawal)
 
         const cdtWithdrawAmount = shiftDigits(quickActionState.rangeBoundLPwithdrawal, 6).toNumber()
         // find percent of underlying usdc to withdraw
